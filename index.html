@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070b19">
+  <meta name="description" content="MIJAN ARENA — a cinematic Tic Tac Toe experience in deep space.">
+  <title>MIJAN ARENA | TIC TAC TOE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <div class="nebula nebula-a"></div><div class="nebula nebula-b"></div>
+  <div class="planet planet-one"></div><div class="planet planet-two"></div>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Mijan Arena home"><span class="brand-mark">M</span><span>MIJAN <b>ARENA</b></span></a>
+      <div class="top-actions">
+        <button class="icon-btn" id="musicBtn" aria-label="Toggle music" title="Music (M)">♫ <span>MUSIC</span></button>
+        <button class="icon-btn" id="soundBtn" aria-label="Toggle sound effects" title="Sound (S)">◖ <span>SFX</span></button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow"><span class="live-dot"></span> COSMIC BATTLE SYSTEM ONLINE</p>
+      <h1>TIC TAC <span>TOE</span></h1>
+      <p class="subtitle">TWO HEROES. ONE ARENA. ONE VICTOR.</p>
+    </section>
+
+    <section class="arena-layout">
+      <aside class="player-card player-x" id="playerXCard">
+        <div class="player-label">PLAYER 01 <span>●</span></div>
+        <div class="hero-avatar iron-avatar"><div class="iron-eye left"></div><div class="iron-eye right"></div><div class="iron-mouth"></div></div>
+        <h2>IRON <em>HERO</em></h2><p class="symbol">X <small>REPULSOR CORE</small></p>
+        <div class="score-label">WINS</div><div class="score" id="scoreX">0</div>
+      </aside>
+
+      <section class="game-panel">
+        <div class="panel-top"><span class="system-tag">ARENA / 01</span><span class="round-status" id="roundStatus">AWAITING PLAYERS</span></div>
+        <div class="mode-row" id="modeRow">
+          <button class="mode-btn active" data-mode="pvp">2 PLAYERS</button>
+          <button class="mode-btn" data-mode="ai">VS COMPUTER</button>
+        </div>
+        <div class="difficulty-row hidden" id="difficultyRow">
+          <span>AI LEVEL</span>
+          <button data-level="easy">EASY</button><button data-level="medium" class="active">MEDIUM</button><button data-level="impossible">IMPOSSIBLE</button>
+        </div>
+        <div class="turn-banner" id="turnBanner"><span class="turn-pip"></span><span id="turnText">PLAYER 1'S TURN</span></div>
+        <div class="board-wrap">
+          <div class="board" id="board" role="grid" aria-label="Tic Tac Toe board">
+            <button class="cell" data-cell="0" role="gridcell" aria-label="Empty square 1"></button><button class="cell" data-cell="1" role="gridcell" aria-label="Empty square 2"></button><button class="cell" data-cell="2" role="gridcell" aria-label="Empty square 3"></button><button class="cell" data-cell="3" role="gridcell" aria-label="Empty square 4"></button><button class="cell" data-cell="4" role="gridcell" aria-label="Empty square 5"></button><button class="cell" data-cell="5" role="gridcell" aria-label="Empty square 6"></button><button class="cell" data-cell="6" role="gridcell" aria-label="Empty square 7"></button><button class="cell" data-cell="7" role="gridcell" aria-label="Empty square 8"></button><button class="cell" data-cell="8" role="gridcell" aria-label="Empty square 9"></button>
+          </div>
+          <div class="win-line" id="winLine"></div>
+        </div>
+        <div class="game-actions"><button class="primary-btn" id="newGameBtn">↻ NEW ROUND</button><button class="secondary-btn" id="menuBtn">MAIN MENU</button></div>
+        <p class="hint">FIRST TO THREE IN A ROW CLAIMS THE ARENA</p>
+      </section>
+
+      <aside class="player-card player-o" id="playerOCard">
+        <div class="player-label">PLAYER 02 <span>●</span></div>
+        <div class="hero-avatar web-avatar"><div class="web-mask"></div><div class="web-eye left"></div><div class="web-eye right"></div></div>
+        <h2>WEB <em>HERO</em></h2><p class="symbol">O <small>WEB-SLINGER</small></p>
+        <div class="score-label">WINS</div><div class="score" id="scoreO">0</div>
+      </aside>
+    </section>
+
+    <footer><span>MIJAN ARENA <b>© 2026</b></span><span>BUILT FOR THE LOVE OF THE GAME</span><span>D / DRAW <b id="scoreD">0</b></span></footer>
+  </main>
+
+  <div class="result-overlay hidden" id="resultOverlay">
+    <div class="result-card"><p class="eyebrow">BATTLE CONCLUDED</p><div class="result-emblem" id="resultEmblem">✦</div><h2 id="resultTitle">VICTORY</h2><p id="resultMessage">The arena has a champion.</p><button class="primary-btn" id="rematchBtn">PLAY AGAIN ↗</button><button class="text-btn" id="resultMenuBtn">BACK TO ARENA</button></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
