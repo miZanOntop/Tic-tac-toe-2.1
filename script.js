@@ -34,7 +34,7 @@ document.querySelectorAll("[data-start-mode]").forEach(b=>b.addEventListener("cl
 }));
 document.querySelectorAll("[data-start-level]").forEach(b=>b.addEventListener("click",()=>{level=b.dataset.startLevel;document.querySelectorAll("[data-start-level]").forEach(x=>x.classList.toggle("active",x===b));document.querySelectorAll(".difficulty-row button").forEach(x=>x.classList.toggle("active",x.dataset.level===level));sfx("click")}));
 $("startMatchBtn").addEventListener("click",()=>{sfx("click");$("startOverlay").classList.add("hidden");$("arenaLayout").classList.remove("hidden");$("modeRow").classList.add("hidden");$("difficultyRow").classList.add("hidden");newRound()});
-document.querySelectorAll(".mode-btn").forEach(b=>b.addEventListener("click",()=>{sfx("click");setMode(b.dataset.mode)}));
+document.querySelectorAll("[data-mode]").forEach(b=>b.addEventListener("click",()=>{sfx("click");setMode(b.dataset.mode)}));
 document.querySelectorAll(".difficulty-row button").forEach(b=>b.addEventListener("click",()=>{level=b.dataset.level;document.querySelectorAll(".difficulty-row button").forEach(x=>x.classList.toggle("active",x===b));sfx("click");newRound()}));
 cells.forEach(c=>c.addEventListener("click",()=>{audioCtx();place(Number(c.dataset.cell))}));
 $("newGameBtn").addEventListener("click",()=>{sfx("click");newRound()});
