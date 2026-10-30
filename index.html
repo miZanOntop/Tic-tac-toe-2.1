@@ -30,7 +30,7 @@
       <p class="subtitle">TWO HEROES. ONE ARENA. ONE VICTOR.</p>
     </section>
 
-    <section class="arena-layout">
+    <section class="arena-layout hidden" id="arenaLayout">
       <aside class="player-card player-x" id="playerXCard">
         <div class="player-label">PLAYER 01 <span>●</span></div>
         <div class="hero-avatar iron-avatar"><div class="iron-eye left"></div><div class="iron-eye right"></div><div class="iron-mouth"></div></div>
@@ -69,6 +69,15 @@
 
     <footer><span>MIJAN ARENA <b>© 2026</b></span><span>BUILT FOR THE LOVE OF THE GAME</span><span>D / DRAW <b id="scoreD">0</b></span></footer>
   </main>
+
+  <div class="start-overlay" id="startOverlay">
+    <div class="result-card start-card">
+      <p class="eyebrow">WELCOME TO THE ARENA</p><div class="result-emblem">✦</div><h2>START MATCH</h2><p>Choose your battle mode and get ready.</p>
+      <div class="start-modes"><button class="mode-btn active" data-start-mode="pvp">2 PLAYERS</button><button class="mode-btn" data-start-mode="ai">VS COMPUTER</button></div>
+      <div class="start-levels hidden" id="startLevels"><span>AI DIFFICULTY</span><button class="active" data-start-level="easy">EASY</button><button data-start-level="medium">MEDIUM</button><button data-start-level="impossible">IMPOSSIBLE</button></div>
+      <button class="primary-btn start-match-btn" id="startMatchBtn">START MATCH ↗</button>
+    </div>
+  </div>
 
   <div class="result-overlay hidden" id="resultOverlay">
     <div class="result-card"><p class="eyebrow">BATTLE CONCLUDED</p><div class="result-emblem" id="resultEmblem">✦</div><h2 id="resultTitle">VICTORY</h2><p id="resultMessage">The arena has a champion.</p><button class="primary-btn" id="rematchBtn">PLAY AGAIN ↗</button><button class="text-btn" id="resultMenuBtn">BACK TO ARENA</button></div>
